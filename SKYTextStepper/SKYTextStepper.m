@@ -194,6 +194,11 @@ static const float kButtonWidth = 44.0f;
         self.currentValue = self.maximum;
     
     [self sendActionsForControlEvents:UIControlEventValueChanged];
+    
+    if (self.valueChangedCallback)
+    {
+        self.valueChangedCallback(self, self.currentValue);
+    }
 }
 
 #pragma mark event handler
@@ -203,6 +208,13 @@ static const float kButtonWidth = 44.0f;
     {
         self.currentValue += self.stepInterval;
     }
+    
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    
+    if (self.valueChangedCallback)
+    {
+        self.valueChangedCallback(self, self.currentValue);
+    }
 }
 
 - (void)decrementButtonTapped:(id)sender
@@ -210,6 +222,13 @@ static const float kButtonWidth = 44.0f;
     if (self.currentValue > self.minimum)
     {
         self.currentValue -= self.stepInterval;
+    }
+    
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    
+    if (self.valueChangedCallback)
+    {
+        self.valueChangedCallback(self, self.currentValue);
     }
 }
 

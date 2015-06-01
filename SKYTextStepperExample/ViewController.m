@@ -22,6 +22,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.textStepper.editableText = YES;
     
+    self.textStepper.valueChangedCallback = ^(SKYTextStepper *stepper, float aValue){
+        NSLog(@"%f",aValue);
+    };
+    
     [self.textStepper becomeFirstResponder];
 }
 

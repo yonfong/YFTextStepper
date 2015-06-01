@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SKYTextStepper;
+// called when value is changed
+typedef void (^SKYTextStepperValueChangedCallback)(SKYTextStepper *stepper, float aValue);
+
+
 IB_DESIGNABLE
 @interface SKYTextStepper : UIControl
 
@@ -20,6 +25,7 @@ IB_DESIGNABLE
 
 @property(nonatomic, assign) CGFloat buttonWidth;       // default: 44.0f
 
+@property(nonatomic, copy) SKYTextStepperValueChangedCallback valueChangedCallback;
 
 // view customization
 /**
