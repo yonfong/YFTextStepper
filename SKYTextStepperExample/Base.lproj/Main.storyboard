@@ -23,6 +23,11 @@
                                     <constraint firstAttribute="height" constant="44" id="M1S-1j-0su"/>
                                     <constraint firstAttribute="width" constant="150" id="gN0-6n-jYb"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonWidth">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

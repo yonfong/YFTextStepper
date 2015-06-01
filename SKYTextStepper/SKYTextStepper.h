@@ -23,7 +23,7 @@ IB_DESIGNABLE
 @property(nonatomic, assign) int numDecimals;           // 小数点位数 default: 0
 @property(nonatomic, assign) BOOL editableText;         // 文本数值是否可编辑 default: NO;
 
-@property(nonatomic, assign) CGFloat buttonWidth;       // default: 44.0f
+@property(nonatomic, assign) IBInspectable CGFloat buttonWidth;       // default: 44.0f
 
 @property(nonatomic, copy) SKYTextStepperValueChangedCallback valueChangedCallback;
 
