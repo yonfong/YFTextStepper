@@ -44,13 +44,12 @@ static const float kButtonWidth = 44.0f;
 - (void)commonInit
 {
     self.numDecimals = 0;
-//    _currentValue = 0.0f;
     _stepInterval = 1.0f;
     _minimum = 0.0f;
     _maximum = INFINITY;
-//    _hidesDecrementWhenMinimum = NO;
-//    _hidesIncrementWhenMaximum = NO;
+
     _buttonWidth = kButtonWidth;
+    _editableText = NO;
     
     self.clipsToBounds = YES;
     [self setBorderWidth:1.0f];
@@ -62,6 +61,7 @@ static const float kButtonWidth = 44.0f;
     self.textField.placeholder = [self getPlaceholderText];
     [self.textField setKeyboardType:UIKeyboardTypeDecimalPad];
     [self.textField addTarget:self action:@selector(didChangeTextField) forControlEvents: UIControlEventEditingChanged];
+    self.textField.enabled = _editableText;
     [self addSubview:self.textField];
     
     _plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -92,18 +92,7 @@ static const float kButtonWidth = 44.0f;
     self.textField.frame = CGRectMake(self.buttonWidth, 0, width - (self.buttonWidth * 2), height);
     self.plusButton.frame = CGRectMake(width - self.buttonWidth, 0, self.buttonWidth, height);
     self.minusButton.frame = CGRectMake(0, 0, self.buttonWidth, height);
-    
-//    self.incrementButton.hidden = (self.hidesIncrementWhenMaximum && [self isMaximum]);
-//    self.decrementButton.hidden = (self.hidesDecrementWhenMinimum && [self isMinimum]);
 }
-
-//- (void)setup
-//{
-//    if (self.valueChangedCallback)
-//    {
-//        self.valueChangedCallback(self, self.value);
-//    }
-//}
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
@@ -119,6 +108,11 @@ static const float kButtonWidth = 44.0f;
 
 #pragma mark view customization
 #pragma mark setter
+- (void)setEditableText:(BOOL)editableText {
+    _editableText = editableText;
+    self.textField.enabled = editableText;
+}
+
 - (void)setBorderColor:(UIColor *)color
 {
     self.layer.borderColor = color.CGColor;
@@ -163,22 +157,7 @@ static const float kButtonWidth = 44.0f;
 
 - (void)setCurrentValue:(float)currentValue
 {
-//    _currentValue = currentValue;
     self.textField.text = [NSString stringWithFormat:[@"%.Xf" stringByReplacingOccurrencesOfString:@"X" withString:[NSString stringWithFormat:@"%d", self.numDecimals]], currentValue];
-//    if (self.hidesDecrementWhenMinimum)
-//    {
-//        self.decrementButton.hidden = [self isMinimum];
-//    }
-//    
-//    if (self.hidesIncrementWhenMaximum)
-//    {
-//        self.incrementButton.hidden = [self isMaximum];
-//    }
-//    
-//    if (self.valueChangedCallback)
-//    {
-//        self.valueChangedCallback(self, _value);
-//    }
 }
 
 -(void)setNumDecimals:(int)numDecimals {
@@ -223,10 +202,6 @@ static const float kButtonWidth = 44.0f;
     if (self.currentValue < self.maximum)
     {
         self.currentValue += self.stepInterval;
-//        if (self.incrementCallback)
-//        {
-//            self.incrementCallback(self, self.value);
-//        }
     }
 }
 
@@ -235,10 +210,6 @@ static const float kButtonWidth = 44.0f;
     if (self.currentValue > self.minimum)
     {
         self.currentValue -= self.stepInterval;
-//        if (self.decrementCallback)
-//        {
-//            self.decrementCallback(self, self.value);
-//        }
     }
 }
 

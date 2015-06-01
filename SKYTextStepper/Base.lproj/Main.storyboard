@@ -16,13 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Frp-fO-hby" customClass="SKYTextStepper">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frp-fO-hby" customClass="SKYTextStepper">
                                 <rect key="frame" x="225" y="20" width="150" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="M1S-1j-0su"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="gN0-6n-jYb"/>
+                                    <constraint firstAttribute="width" constant="150" id="gN0-6n-jYb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -40,6 +39,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="textStepper" destination="Frp-fO-hby" id="1Dz-er-6Pa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
