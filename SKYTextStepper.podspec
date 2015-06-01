@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SKYTextStepper"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "SKYTextStepper is a customizable UIControl with stepper and Textfield combined."
 
   s.homepage     = "https://github.com/bluesky0109/SKYTextStepper"
