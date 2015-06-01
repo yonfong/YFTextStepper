@@ -12,9 +12,16 @@
 // called when value is changed
 typedef void (^SKYTextStepperValueChangedCallback)(SKYTextStepper *stepper, float aValue);
 
+typedef enum {
+    TextStepperChangeTypeNegative = -1, // event means one step down
+    TextStepperChangeTypePositive = 1 // event means one step up
+} TextStepperChangeType;
+
 
 IB_DESIGNABLE
 @interface SKYTextStepper : UIControl
+
+@property (nonatomic, assign, readonly) TextStepperChangeType changeType;
 
 @property(nonatomic, assign) float currentValue;        // 当前值
 @property(nonatomic, assign) float stepInterval;        // default: 1.0

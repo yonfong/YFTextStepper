@@ -12,9 +12,9 @@ static const float kButtonWidth = 44.0f;
 
 @interface SKYTextStepper ()
 
-@property (nonatomic, retain, readonly) UIButton *plusButton;
-@property (nonatomic, retain, readonly) UIButton *minusButton;
-@property (nonatomic, retain, readonly) UITextField  *textField;
+@property (nonatomic, strong, readonly) UIButton *plusButton;
+@property (nonatomic, strong, readonly) UIButton *minusButton;
+@property (nonatomic, strong, readonly) UITextField  *textField;
 
 - (NSString*) getPlaceholderText;
 - (void)      didChangeTextField;
@@ -22,6 +22,9 @@ static const float kButtonWidth = 44.0f;
 
 
 @implementation SKYTextStepper
+
+TextStepperChangeType _longTapLoopType;
+
 #pragma mark initialization
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -67,11 +70,16 @@ static const float kButtonWidth = 44.0f;
     _plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.plusButton setTitle:@"+" forState:UIControlStateNormal];
     [self.plusButton addTarget:self action:@selector(incrementButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.plusButton addTarget:self action:@selector(didBeginPlusLongTap) forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragEnter];
+    [self.plusButton addTarget:self action:@selector(didEndLongTap)  forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel | UIControlEventTouchDragExit];
+    
     [self addSubview:self.plusButton];
     
     _minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.minusButton setTitle:@"−" forState:UIControlStateNormal];
     [self.minusButton addTarget:self action:@selector(decrementButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.minusButton addTarget:self action:@selector(didBeginMinusLongTap) forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragEnter];
+    [self.minusButton addTarget:self action:@selector(didEndLongTap) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel | UIControlEventTouchDragExit];
     [self addSubview:self.minusButton];
     
     UIColor *defaultColor = [UIColor colorWithRed:(79/255.0) green:(161/255.0) blue:(210/255.0) alpha:1.0];
@@ -160,6 +168,25 @@ static const float kButtonWidth = 44.0f;
     self.textField.text = [NSString stringWithFormat:[@"%.Xf" stringByReplacingOccurrencesOfString:@"X" withString:[NSString stringWithFormat:@"%d", self.numDecimals]], currentValue];
 }
 
+- (void)setChangeType:(TextStepperChangeType)changeType {
+    _changeType = changeType;
+    
+    if (self.changeType == TextStepperChangeTypeNegative) {
+        if (self.currentValue > self.minimum) {
+            self.currentValue -= self.stepInterval;
+        } else {
+            self.currentValue = self.minimum;
+        }
+    } else {
+        if (self.currentValue < self.maximum) {
+            self.currentValue += self.stepInterval;
+        } else {
+            self.currentValue = self.maximum;
+        }
+    }
+}
+
+
 -(void)setNumDecimals:(int)numDecimals {
     _numDecimals = numDecimals;
     if (_numDecimals<0) {
@@ -201,13 +228,13 @@ static const float kButtonWidth = 44.0f;
     }
 }
 
-#pragma mark event handler
+#pragma mark button event handler
+
+#pragma mark Plus Button Events
 - (void)incrementButtonTapped:(id)sender
 {
-    if (self.currentValue < self.maximum)
-    {
-        self.currentValue += self.stepInterval;
-    }
+    [self.textField resignFirstResponder];
+    self.changeType = TextStepperChangeTypePositive;
     
     [self sendActionsForControlEvents:UIControlEventValueChanged];
     
@@ -217,12 +244,18 @@ static const float kButtonWidth = 44.0f;
     }
 }
 
+- (void)didBeginPlusLongTap {
+    [self.textField resignFirstResponder];
+    _longTapLoopType = TextStepperChangeTypePositive;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(backgroundLongTapLoop) object:nil];
+    [self performSelector:@selector(backgroundLongTapLoop) withObject:nil afterDelay:0.5];
+}
+
+#pragma mark Minus Button Events
 - (void)decrementButtonTapped:(id)sender
 {
-    if (self.currentValue > self.minimum)
-    {
-        self.currentValue -= self.stepInterval;
-    }
+    [self.textField resignFirstResponder];
+    self.changeType = TextStepperChangeTypeNegative;
     
     [self sendActionsForControlEvents:UIControlEventValueChanged];
     
@@ -231,6 +264,38 @@ static const float kButtonWidth = 44.0f;
         self.valueChangedCallback(self, self.currentValue);
     }
 }
+
+- (void)didBeginMinusLongTap {
+    [self.textField resignFirstResponder];
+    _longTapLoopType = TextStepperChangeTypeNegative;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(backgroundLongTapLoop) object:nil];
+    [self performSelector:@selector(backgroundLongTapLoop) withObject:nil afterDelay:0.5];
+}
+
+#pragma mark Long Tap Loop
+
+- (void)didEndLongTap {
+    [self.textField resignFirstResponder];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(backgroundLongTapLoop) object:nil];
+}
+
+- (void)backgroundLongTapLoop {
+    [self.textField resignFirstResponder];
+    [self performSelectorOnMainThread:@selector(longTapLoop) withObject:nil waitUntilDone:YES];
+    [self performSelector:@selector(backgroundLongTapLoop) withObject:nil  afterDelay:0.1];
+}
+
+- (void)longTapLoop {
+
+    self.changeType= _longTapLoopType;
+    
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    if (self.valueChangedCallback)
+    {
+        self.valueChangedCallback(self, self.currentValue);
+    }
+}
+
 
 
 #pragma mark private helpers
