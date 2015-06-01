@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		339CDA281AEA3347008F1170 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 339CDA271AEA3347008F1170 /* main.m */; };
-		339CDA2B1AEA3347008F1170 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 339CDA2A1AEA3347008F1170 /* AppDelegate.m */; };
-		339CDA2E1AEA3347008F1170 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339CDA2D1AEA3347008F1170 /* ViewController.m */; };
-		339CDA311AEA3347008F1170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339CDA2F1AEA3347008F1170 /* Main.storyboard */; };
-		339CDA331AEA3347008F1170 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339CDA321AEA3347008F1170 /* Images.xcassets */; };
-		339CDA361AEA3347008F1170 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339CDA341AEA3347008F1170 /* LaunchScreen.xib */; };
+		338D157F1B1C06D700387CE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D15751B1C06D700387CE7 /* AppDelegate.m */; };
+		338D15801B1C06D700387CE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338D15761B1C06D700387CE7 /* LaunchScreen.xib */; };
+		338D15811B1C06D700387CE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338D15781B1C06D700387CE7 /* Main.storyboard */; };
+		338D15821B1C06D700387CE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338D157A1B1C06D700387CE7 /* Images.xcassets */; };
+		338D15831B1C06D700387CE7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 338D157B1B1C06D700387CE7 /* Info.plist */; };
+		338D15841B1C06D700387CE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D157C1B1C06D700387CE7 /* main.m */; };
+		338D15851B1C06D700387CE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D157E1B1C06D700387CE7 /* ViewController.m */; };
 		339CDA421AEA3347008F1170 /* SKYTextStepperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 339CDA411AEA3347008F1170 /* SKYTextStepperTests.m */; };
 		339CDA4D1AEA3379008F1170 /* SKYTextStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 339CDA4C1AEA3379008F1170 /* SKYTextStepper.m */; };
 /* End PBXBuildFile section */
@@ -28,16 +29,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		338D15741B1C06D700387CE7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		338D15751B1C06D700387CE7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		338D15771B1C06D700387CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		338D15791B1C06D700387CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		338D157A1B1C06D700387CE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		338D157B1B1C06D700387CE7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		338D157C1B1C06D700387CE7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		338D157D1B1C06D700387CE7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		338D157E1B1C06D700387CE7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		339CDA221AEA3347008F1170 /* SKYTextStepper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKYTextStepper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		339CDA261AEA3347008F1170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		339CDA271AEA3347008F1170 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		339CDA291AEA3347008F1170 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		339CDA2A1AEA3347008F1170 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		339CDA2C1AEA3347008F1170 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		339CDA2D1AEA3347008F1170 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		339CDA301AEA3347008F1170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		339CDA321AEA3347008F1170 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		339CDA351AEA3347008F1170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		339CDA3B1AEA3347008F1170 /* SKYTextStepperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKYTextStepperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		339CDA401AEA3347008F1170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		339CDA411AEA3347008F1170 /* SKYTextStepperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKYTextStepperTests.m; sourceTree = "<group>"; };
@@ -63,9 +64,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338D15731B1C06D700387CE7 /* SKYTextStepperExample */ = {
+			isa = PBXGroup;
+			children = (
+				338D15741B1C06D700387CE7 /* AppDelegate.h */,
+				338D15751B1C06D700387CE7 /* AppDelegate.m */,
+				338D15761B1C06D700387CE7 /* LaunchScreen.xib */,
+				338D15781B1C06D700387CE7 /* Main.storyboard */,
+				338D157A1B1C06D700387CE7 /* Images.xcassets */,
+				338D157B1B1C06D700387CE7 /* Info.plist */,
+				338D157C1B1C06D700387CE7 /* main.m */,
+				338D157D1B1C06D700387CE7 /* ViewController.h */,
+				338D157E1B1C06D700387CE7 /* ViewController.m */,
+			);
+			path = SKYTextStepperExample;
+			sourceTree = "<group>";
+		};
 		339CDA191AEA3347008F1170 = {
 			isa = PBXGroup;
 			children = (
+				338D15731B1C06D700387CE7 /* SKYTextStepperExample */,
 				339CDA241AEA3347008F1170 /* SKYTextStepper */,
 				339CDA3E1AEA3347008F1170 /* SKYTextStepperTests */,
 				339CDA231AEA3347008F1170 /* Products */,
@@ -84,27 +102,10 @@
 		339CDA241AEA3347008F1170 /* SKYTextStepper */ = {
 			isa = PBXGroup;
 			children = (
-				339CDA291AEA3347008F1170 /* AppDelegate.h */,
-				339CDA2A1AEA3347008F1170 /* AppDelegate.m */,
-				339CDA2C1AEA3347008F1170 /* ViewController.h */,
-				339CDA2D1AEA3347008F1170 /* ViewController.m */,
 				339CDA4B1AEA3379008F1170 /* SKYTextStepper.h */,
 				339CDA4C1AEA3379008F1170 /* SKYTextStepper.m */,
-				339CDA2F1AEA3347008F1170 /* Main.storyboard */,
-				339CDA321AEA3347008F1170 /* Images.xcassets */,
-				339CDA341AEA3347008F1170 /* LaunchScreen.xib */,
-				339CDA251AEA3347008F1170 /* Supporting Files */,
 			);
 			path = SKYTextStepper;
-			sourceTree = "<group>";
-		};
-		339CDA251AEA3347008F1170 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				339CDA261AEA3347008F1170 /* Info.plist */,
-				339CDA271AEA3347008F1170 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		339CDA3E1AEA3347008F1170 /* SKYTextStepperTests */ = {
@@ -204,9 +205,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339CDA311AEA3347008F1170 /* Main.storyboard in Resources */,
-				339CDA361AEA3347008F1170 /* LaunchScreen.xib in Resources */,
-				339CDA331AEA3347008F1170 /* Images.xcassets in Resources */,
+				338D15831B1C06D700387CE7 /* Info.plist in Resources */,
+				338D15821B1C06D700387CE7 /* Images.xcassets in Resources */,
+				338D15801B1C06D700387CE7 /* LaunchScreen.xib in Resources */,
+				338D15811B1C06D700387CE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,10 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339CDA2E1AEA3347008F1170 /* ViewController.m in Sources */,
-				339CDA2B1AEA3347008F1170 /* AppDelegate.m in Sources */,
+				338D157F1B1C06D700387CE7 /* AppDelegate.m in Sources */,
+				338D15841B1C06D700387CE7 /* main.m in Sources */,
+				338D15851B1C06D700387CE7 /* ViewController.m in Sources */,
 				339CDA4D1AEA3379008F1170 /* SKYTextStepper.m in Sources */,
-				339CDA281AEA3347008F1170 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,20 +252,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		339CDA2F1AEA3347008F1170 /* Main.storyboard */ = {
+		338D15761B1C06D700387CE7 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				339CDA301AEA3347008F1170 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		339CDA341AEA3347008F1170 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				339CDA351AEA3347008F1170 /* Base */,
+				338D15771B1C06D700387CE7 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		338D15781B1C06D700387CE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				338D15791B1C06D700387CE7 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -353,7 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SKYTextStepper/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SKYTextStepperExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -363,7 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SKYTextStepper/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SKYTextStepperExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,6 +424,7 @@
 				339CDA471AEA3347008F1170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		339CDA481AEA3347008F1170 /* Build configuration list for PBXNativeTarget "SKYTextStepperTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +433,7 @@
 				339CDA4A1AEA3347008F1170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
