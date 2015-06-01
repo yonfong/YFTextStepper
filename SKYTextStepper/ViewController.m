@@ -20,9 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.textStepper.editableText = NO;
+    self.textStepper.editableText = YES;
     
-    
+    [self.textStepper becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +32,13 @@
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
+    
+    if ([self.textStepper isFirstResponder]) {
+        NSLog(@"yyyyyyy");
+    }
+    NSLog(@"xxxxx");
+    [self.textStepper resignFirstResponder];
+
 }
 
 @end

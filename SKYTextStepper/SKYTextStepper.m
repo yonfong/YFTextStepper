@@ -233,4 +233,26 @@ static const float kButtonWidth = 44.0f;
 }
 */
 
+#pragma mark -  Responder
+- (BOOL)canBecomeFirstResponder {
+    return [self.textField canBecomeFirstResponder];
+}
+
+- (BOOL)becomeFirstResponder {
+    return [self.textField becomeFirstResponder];
+}
+
+- (BOOL)canResignFirstResponder {
+    return [self.textField canResignFirstResponder];
+}
+
+- (BOOL)resignFirstResponder {
+    return [self.textField resignFirstResponder];
+}
+
+- (BOOL)isFirstResponder {
+    return [self.textField isFirstResponder];
+}
+
+
 @end
